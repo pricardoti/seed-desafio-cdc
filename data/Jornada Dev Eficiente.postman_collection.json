@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "3af35345-bc33-40b3-8f07-d40766020f1d",
+		"name": "Jornada Dev Eficiente",
+		"description": "Collection das APIs criadas durante o desenvolvimento dos desafios da Jornada Dev Eficiente.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Salvar Autor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Paulo Ricardo\",\n  \"email\": \"pricardo.ti@gmail.com\",\n  \"descricao\": \"Criador de conteúdos de programação.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Autor por Codigo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Paulo Ricardo\",\n  \"email\": \"pricardo.ti@gmail.com\",\n  \"descricao\": \"Criador de conteúdos de programação.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/autores/477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "215b6408-7a5c-4a86-8bcc-b04de9fdda52",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8bcabccd-691b-4335-88b3-4f37d2115979",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

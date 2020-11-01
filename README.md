@@ -1,4 +1,4 @@
-# DESAFIO 1 - PARTE DA CASA DO CÓDIGO
+# DESAFIO - CASA DO CÓDIGO
 
 Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilhar os códigos produzido todos os colegas da Jornada Dev Eficiente :).
 
@@ -13,4 +13,5 @@ Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilha
 -   A descrição é obrigatória e não pode passar de `400` caracteres;
 
 ### Resultado esperado
--   Um novo autor criado e status `200` retornado;
+-   Um novo autor criado e status `201` retornado;
+
