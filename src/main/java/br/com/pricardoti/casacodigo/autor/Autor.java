@@ -3,6 +3,7 @@ package br.com.pricardoti.casacodigo.autor;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -31,10 +32,23 @@ public class Autor {
     @Column(length = 400, nullable = false)
     private String descricao;
 
+    @PastOrPresent
     @Column(nullable = false)
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
     public Autor() {
+    }
+
+    public Autor(
+            String codigo,
+            @NotBlank String nome,
+            @Email @NotBlank String email,
+            @Size(max = 400) @NotBlank String descricao,
+            @PastOrPresent LocalDateTime dataCriacao
+    ) {
+        this(nome, email, descricao);
+        this.codigo = codigo;
+        this.dataCriacao = dataCriacao;
     }
 
     public Autor(

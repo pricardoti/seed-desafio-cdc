@@ -41,10 +41,9 @@ public class AutorRequest {
 
     @Override
     public String toString() {
-        return "AutorRequest{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", descricao='" + descricao + '\'' +
+        return "{\"nome\":\"" + nome + "\"" +
+                ", \"email\":\"" + email + "\"" +
+                ", \"descricao\":\"" + descricao + "\"" +
                 '}';
     }
 

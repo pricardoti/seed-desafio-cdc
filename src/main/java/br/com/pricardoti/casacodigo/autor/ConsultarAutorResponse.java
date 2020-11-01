@@ -5,11 +5,11 @@ import java.time.format.DateTimeFormatter;
 
 public class ConsultarAutorResponse {
 
-    private String codigo;
-    private String nome;
-    private String email;
-    private String descricao;
-    private String criacao;
+    private final String codigo;
+    private final String nome;
+    private final String email;
+    private final String descricao;
+    private final String criacao;
 
     public ConsultarAutorResponse(
             @NotNull final Autor autor
