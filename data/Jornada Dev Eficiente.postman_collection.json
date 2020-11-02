@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Salvar Autor",
+			"name": "Salvar Autor - Inválido",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -15,6 +15,39 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\":\"Robert C. Martin (Uncle Bob)\", \n    \"email\":\"unclebobcleancoder.com\", \n    \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done. Object Mentor offers process improvement consulting, object-oriented software design consulting, training, and skill development services to major corporations worldwide. A leader in the industry of software development, Mr. Martin served three years as the editor-in-chief of the C++ Report, and he served as the first chairman of the Agile Alliance.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/autores/",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"autores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Autor - Valido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
