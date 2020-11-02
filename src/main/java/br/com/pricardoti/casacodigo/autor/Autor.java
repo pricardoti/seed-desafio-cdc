@@ -1,5 +1,7 @@
 package br.com.pricardoti.casacodigo.autor;
 
+import br.com.pricardoti.casacodigo.autor.validation.email.EmailUnico;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -22,8 +24,8 @@ public class Autor {
     @Column(nullable = false)
     private String nome;
 
-    @Email
     @NotBlank
+    @EmailUnico
     @Column(nullable = false)
     private String email;
 
@@ -42,7 +44,7 @@ public class Autor {
     public Autor(
             String codigo,
             @NotBlank String nome,
-            @Email @NotBlank String email,
+            @NotBlank @EmailUnico String email,
             @Size(max = 400) @NotBlank String descricao,
             @PastOrPresent LocalDateTime dataCriacao
     ) {

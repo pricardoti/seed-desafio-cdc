@@ -7,33 +7,33 @@
 	},
 	"item": [
 		{
-			"name": "Salvar Autor - Inválido",
+			"name": "Consultar Autor por Codigo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nome\":\"Robert C. Martin (Uncle Bob)\", \n    \"email\":\"unclebobcleancoder.com\", \n    \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done. Object Mentor offers process improvement consulting, object-oriented software design consulting, training, and skill development services to major corporations worldwide. A leader in the industry of software development, Mr. Martin served three years as the editor-in-chief of the C++ Report, and he served as the first chairman of the Agile Alliance.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\n  \"nome\": \"Paulo Ricardo\",\n  \"email\": \"pricardo.ti@gmail.com\",\n  \"descricao\": \"Criador de conteúdos de programação.\"\n}"
 				},
 				"url": {
-					"raw": "{{URL_BASE}}/autores/",
+					"raw": "http://localhost:8080/autores/477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b",
+					"protocol": "http",
 					"host": [
-						"{{URL_BASE}}"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
 						"autores",
-						""
+						"477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b"
 					]
 				}
 			},
@@ -69,12 +69,42 @@
 			"response": []
 		},
 		{
-			"name": "Consultar Autor por Codigo",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Salvar Autor - Todos os Campos Inválido",
 			"request": {
-				"method": "GET",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": null,\n    \"email\": null,\n    \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done. Object Mentor offers process improvement consulting, object-oriented software design consulting, training, and skill development services to major corporations worldwide. A leader in the industry of software development, Mr. Martin served three years as the editor-in-chief of the C++ Report, and he served as the first chairman of the Agile Alliance.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/autores/",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"autores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Autor - Email Inválido 1",
+			"request": {
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -84,18 +114,54 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"nome\": \"Paulo Ricardo\",\n  \"email\": \"pricardo.ti@gmail.com\",\n  \"descricao\": \"Criador de conteúdos de programação.\"\n}"
+					"raw": "{\n    \"nome\": null,\n    \"email\": null,\n    \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done. Object Mentor offers process improvement consulting, object-oriented software design consulting, training, and skill development services to major corporations worldwide. A leader in the industry of software development, Mr. Martin served three years as the editor-in-chief of the C++ Report, and he served as the first chairman of the Agile Alliance.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/autores/477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b",
-					"protocol": "http",
+					"raw": "{{URL_BASE}}/autores/",
 					"host": [
-						"localhost"
+						"{{URL_BASE}}"
 					],
-					"port": "8080",
 					"path": [
 						"autores",
-						"477b3ffc-0d1a-4b3b-ad07-e0135aeffa4b"
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Autor - Email Inválido 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Robert C. Martin (Uncle Bob)\",\n  \"email\": null,\n  \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/autores/",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"autores",
+						""
 					]
 				}
 			},

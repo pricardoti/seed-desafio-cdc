@@ -12,7 +12,7 @@ public class SalvarAutorRequest {
     private String nome;
 
     @EmailUnico
-    @NotBlank(message = "{notBlank.autor.email}")
+    @NotBlank(message = "{notblank.autor.email}")
     private String email;
 
     @Size(max = 400, message = "{size.autor.descricao}")

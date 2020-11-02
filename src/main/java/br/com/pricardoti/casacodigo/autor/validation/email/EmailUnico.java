@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Email(message = "{email.autor.notvalid}")
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = EmailUnicoValidator.class)
 @ReportAsSingleViolation

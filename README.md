@@ -17,8 +17,9 @@ Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilha
 
 
 ---
-Pontos de Melhorias:
+##### Pontos de Melhorias:
 
+ - [x] Collections para o Postman
  - [ ] Criar os testes unitários do `GET`  
  - [ ] Ajustar os testes com `Parameterized`
  - [ ] Script de carga inical - base de testes
@@ -27,7 +28,6 @@ Pontos de Melhorias:
 ##### Links Importantes (legais para dar uma olhada):
 
 [Validator Custom Constraints](https://docs.jboss.org/hibernate/validator/4.1/reference/en-US/html/validator-customconstraints.html#validator-customconstraints-compound)
-
 
 ---
 
