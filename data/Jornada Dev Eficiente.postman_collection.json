@@ -52,7 +52,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"nome\": \"Paulo Ricardo\",\n  \"email\": \"pricardo.ti@gmail.com\",\n  \"descricao\": \"Criador de conteúdos de programação.\"\n}"
+					"raw": "{\n  \"nome\": \"Robert C. Martin (Uncle Bob)\",\n  \"email\": \"unclebob@cleancoder.com\",\n  \"descricao\": \"Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done.\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/autores",
