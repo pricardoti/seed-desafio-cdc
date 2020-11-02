@@ -19,7 +19,7 @@ public class ConsultarAutorResponse {
         this.email = autor.getEmail();
         this.descricao = autor.getDescricao();
         this.criacao = autor.getDataCriacao()
-                .format(DateTimeFormatter.ofPattern("yyyy HH:mm:ss a"));
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss a"));
     }
 
     public String getCodigo() {
