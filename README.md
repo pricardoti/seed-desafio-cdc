@@ -15,3 +15,14 @@ Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilha
 ### Resultado esperado
 -   Um novo autor criado e status `201` retornado;
 
+
+---
+Pontos de Melhorias: 
+ - [ ] Criar os testes unitários do `GET`  
+ - [ ] Ajustar os testes com `Parameterized`
+
+---
+
+Se curtiu não esqueça de deixar o seu :star:
+
+---

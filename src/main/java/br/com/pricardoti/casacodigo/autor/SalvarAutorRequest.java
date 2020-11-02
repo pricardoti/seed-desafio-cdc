@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class AutorRequest {
+public class SalvarAutorRequest {
 
     @NotBlank
     private String nome;
@@ -17,7 +17,10 @@ public class AutorRequest {
     @NotBlank
     private String descricao;
 
-    public AutorRequest(
+    public SalvarAutorRequest() {
+    }
+
+    public SalvarAutorRequest(
             @NotBlank String nome,
             @Email @NotBlank String email,
             @Size(max = 400) @NotBlank String descricao
@@ -41,13 +44,14 @@ public class AutorRequest {
 
     @Override
     public String toString() {
-        return "{\"nome\":\"" + nome + "\"" +
-                ", \"email\":\"" + email + "\"" +
-                ", \"descricao\":\"" + descricao + "\"" +
+        return "SalvarAutorRequest{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", descricao='" + descricao + '\'' +
                 '}';
     }
 
-    protected Autor toAutor() {
+    protected Autor getAutor() {
         return new Autor(this.nome, this.email, this.descricao);
     }
 }
