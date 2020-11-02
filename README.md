@@ -24,6 +24,11 @@ Pontos de Melhorias:
  - [ ] Script de carga inical - base de testes
  - [ ] Adicionar o **Hateoas**
 
+##### Links Importantes (legais para dar uma olhada):
+
+[Validator Custom Constraints](https://docs.jboss.org/hibernate/validator/4.1/reference/en-US/html/validator-customconstraints.html#validator-customconstraints-compound)
+
+
 ---
 
 Se curtiu não esqueça de deixar o seu :star:

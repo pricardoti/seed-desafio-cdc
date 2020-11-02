@@ -1,5 +1,7 @@
 package br.com.pricardoti.casacodigo.autor;
 
+import br.com.pricardoti.casacodigo.autor.validation.email.EmailUnico;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -9,7 +11,7 @@ public class SalvarAutorRequest {
     @NotBlank(message = "{notblank.autor.nome}")
     private String nome;
 
-    @Email(message = "{email.autor.notvalid}")
+    @EmailUnico
     @NotBlank(message = "{notBlank.autor.email}")
     private String email;
 
