@@ -93,23 +93,43 @@ public class AutorControllerTest {
         final String descricao = "Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done.";
 
         SalvarAutorRequest autorRequest = new SalvarAutorRequest(null, email, descricao);
-        executarMockMvcfail(autorRequest, "nome");
+        executarMockMvcfail(autorRequest, "nome", "O campo 'nome' é obrigatório.");
     }
 
     @Test
-    @DisplayName("Salvar Autor - Falha Email")
+    @DisplayName("Salvar Autor - Falha Email Não Preenchido")
+    public void salvarAutor_emailNaoPreenchido_badRequest() throws Exception {
+        final String nome = "Robert C. Martin (Uncle Bob)";
+        final String descricao = "Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done.";
+
+        SalvarAutorRequest autorRequest = new SalvarAutorRequest(nome, null, descricao);
+        executarMockMvcfail(autorRequest, "email", "O campo 'e-mail' é obrigatório.");
+    }
+
+    @Test
+    @DisplayName("Salvar Autor - Falha Email Inválido")
     public void salvarAutor_emailFormatoInvalido_badRequest() throws Exception {
         final String nome = "Robert C. Martin (Uncle Bob)";
         final String email = "unclebobcleancoder.com";
         final String descricao = "Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done.";
 
         SalvarAutorRequest autorRequest = new SalvarAutorRequest(nome, email, descricao);
-        executarMockMvcfail(autorRequest, "email");
+        executarMockMvcfail(autorRequest, "email", "O campo 'email' não está preenchido com um formato válido.");
     }
 
     @Test
-    @DisplayName("Salvar Autor - Falha Descricao")
-    public void deveSalvarAutor_tamanhoMaximoDescricao_badRequest() throws Exception {
+    @DisplayName("Salvar Autor - Falha descricao não preenchida")
+    public void salvarAutor_descricaoNaoPreenchida_badRequest() throws Exception {
+        final String nome = "Robert C. Martin (Uncle Bob)";
+        final String email = "unclebob@cleancoder.com";
+
+        SalvarAutorRequest autorRequest = new SalvarAutorRequest(nome, email, null);
+        executarMockMvcfail(autorRequest, "descricao", "O campo 'descricao' deve ser preenchido e possuir o no máximo 400 caracteres.");
+    }
+
+    @Test
+    @DisplayName("Salvar Autor - Falha descricao tamanho inválido")
+    public void salvarAutor_tamanhoMaximoDescricao_badRequest() throws Exception {
         final String nome = "Robert C. Martin (Uncle Bob)";
         final String email = "unclebob@cleancoder.com";
         final String descricao = "Robert C. Martin (Uncle Bob) has been a programmer since 1970, is an international firm of highly experienced software developers and managers who specialize in helping companies get their projects done. " +
@@ -117,10 +137,10 @@ public class AutorControllerTest {
                 "A leader in the industry of software development, Mr. Martin served three years as the editor-in-chief of the C++ Report, and he served as the first chairman of the Agile Alliance.";
 
         SalvarAutorRequest autorRequest = new SalvarAutorRequest(nome, email, descricao);
-        executarMockMvcfail(autorRequest, "descricao");
+        executarMockMvcfail(autorRequest, "descricao", "O campo 'descricao' deve ser preenchido e possuir o no máximo 400 caracteres.");
     }
 
-    private final void executarMockMvcfail(SalvarAutorRequest autorRequest, String campo) throws Exception {
+    private final void executarMockMvcfail(SalvarAutorRequest autorRequest, String campo, String mensagem) throws Exception {
         mockMvc.perform(
                 post(URL_BASE)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -135,6 +155,7 @@ public class AutorControllerTest {
                 .andExpect(jsonPath("$.timestamp", notNullValue()))
                 .andExpect(jsonPath("$.errors", notNullValue()))
                 .andExpect(jsonPath("$.errors", hasSize(1)))
-                .andExpect(jsonPath("$.errors[0].campo", equalTo(campo)));
+                .andExpect(jsonPath("$.errors[0].key", equalTo(campo)))
+                .andExpect(jsonPath("$.errors[0].value", equalTo(mensagem)));
     }
 }

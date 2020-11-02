@@ -1,4 +1,4 @@
-package br.com.pricardoti.casacodigo.core.handler;
+package br.com.pricardoti.casacodigo.core.error.handler;
 
 import br.com.pricardoti.casacodigo.core.error.ErrorDetail;
 import br.com.pricardoti.casacodigo.core.error.ItemErrorDetail;

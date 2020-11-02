@@ -9,6 +9,8 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+  messages:
+    basename: messages
 
   # H2 Web Console (H2ConsoleProperties)
   h2:

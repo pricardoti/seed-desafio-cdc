@@ -6,15 +6,15 @@ import javax.validation.constraints.Size;
 
 public class SalvarAutorRequest {
 
-    @NotBlank
+    @NotBlank(message = "{notblank.autor.nome}")
     private String nome;
 
-    @Email
-    @NotBlank
+    @Email(message = "{email.autor.notvalid}")
+    @NotBlank(message = "{notBlank.autor.email}")
     private String email;
 
-    @Size(max = 400)
-    @NotBlank
+    @Size(max = 400, message = "{size.autor.descricao}")
+    @NotBlank(message = "{size.autor.descricao}")
     private String descricao;
 
     public SalvarAutorRequest() {

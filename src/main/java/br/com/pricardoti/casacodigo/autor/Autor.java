@@ -15,7 +15,7 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(length = 36, unique = true, nullable = false)
     private String codigo = UUID.randomUUID().toString();
 
     @NotBlank
