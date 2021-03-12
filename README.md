@@ -20,6 +20,7 @@ Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilha
 ##### Pontos de Melhorias:
 
  - [x] Collections para o Postman
+ - [x] Custom Validation (include `@GrupSequence`)
  - [ ] Criar os testes unitários do `GET`  
  - [ ] Ajustar os testes com `Parameterized`
  - [ ] Script de carga inical - base de testes
