@@ -22,6 +22,7 @@ Este é um fork do projeto inicial (vazio) do Alberto, para podermos compartilha
 
  - [x] Collections para o Postman
  - [x] Custom Validation (include `@GrupSequence`)
+ - [x] JPA `AttibuteConverter` 
  - [ ] Criar os testes unitários do `GET`  
  - [ ] Ajustar os testes com `Parameterized`
  - [ ] Script de carga inical - base de testes

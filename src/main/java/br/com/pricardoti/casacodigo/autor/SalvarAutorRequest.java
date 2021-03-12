@@ -4,14 +4,16 @@ import br.com.pricardoti.casacodigo.commons.validation.BasicField;
 import br.com.pricardoti.casacodigo.commons.validation.email.EmailUnico;
 
 import javax.validation.GroupSequence;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import javax.validation.groups.Default;
+import java.io.Serializable;
 
 @GroupSequence({BasicField.class, SalvarAutorRequest.class})
-public class SalvarAutorRequest {
+public class SalvarAutorRequest implements Serializable {
+
+    private static final long serialVersionUID = -5454227136002105398L;
 
     @NotBlank(groups = BasicField.class, message = "{notblank.autor.nome}")
     private String nome;
@@ -49,7 +51,7 @@ public class SalvarAutorRequest {
         return descricao;
     }
 
-    protected Autor convertToAutor() {
+    protected Autor toAutor() {
         return new Autor(this.nome, this.email, this.descricao);
     }
 }

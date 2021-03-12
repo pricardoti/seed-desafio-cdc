@@ -4,8 +4,11 @@ import br.com.pricardoti.casacodigo.commons.validation.unique.UniqueValue;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-public class SalvarCategoriaRequest {
+public class SalvarCategoriaRequest implements Serializable {
+
+    private static final long serialVersionUID = 6576545701924021549L;
 
     @NotBlank
     @Size(min = 5, max = 50)
@@ -20,7 +23,7 @@ public class SalvarCategoriaRequest {
         return nome;
     }
 
-    public Categoria convertToCategoria() {
+    public Categoria toCategoria() {
         return new Categoria(this.nome);
     }
 }

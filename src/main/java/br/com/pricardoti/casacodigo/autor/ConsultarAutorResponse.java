@@ -1,9 +1,12 @@
 package br.com.pricardoti.casacodigo.autor;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.format.DateTimeFormatter;
 
-public class ConsultarAutorResponse {
+public class ConsultarAutorResponse implements Serializable {
+
+    private static final long serialVersionUID = 7630802429590156943L;
 
     private final String codigo;
     private final String nome;

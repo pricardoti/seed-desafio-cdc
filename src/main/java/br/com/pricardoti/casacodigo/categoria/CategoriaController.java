@@ -21,7 +21,7 @@ public class CategoriaController {
 
     @PostMapping
     public ResponseEntity<SalvarCategoriaResponse> salvar(@Valid @RequestBody SalvarCategoriaRequest request) {
-        final Categoria categoria = categoriaRepository.save(request.convertToCategoria());
+        final Categoria categoria = categoriaRepository.save(request.toCategoria());
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(new SalvarCategoriaResponse(categoria));

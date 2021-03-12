@@ -1,6 +1,10 @@
 package br.com.pricardoti.casacodigo.categoria;
 
-public class SalvarCategoriaResponse {
+import java.io.Serializable;
+
+public class SalvarCategoriaResponse implements Serializable {
+
+    private static final long serialVersionUID = -7173865822153661304L;
 
     private Long id;
     private String nome;

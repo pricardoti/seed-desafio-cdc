@@ -7,11 +7,14 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-public class Autor {
+public class Autor implements Serializable {
+
+    private static final long serialVersionUID = 4476175454986289050L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

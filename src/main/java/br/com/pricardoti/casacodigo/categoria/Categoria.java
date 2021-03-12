@@ -3,9 +3,12 @@ package br.com.pricardoti.casacodigo.categoria;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
-public class Categoria {
+public class Categoria implements Serializable {
+
+    private static final long serialVersionUID = 6439186028094766460L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
