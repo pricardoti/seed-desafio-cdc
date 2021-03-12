@@ -1,19 +1,18 @@
 package br.com.pricardoti.casacodigo.livro;
 
 import javax.persistence.AttributeConverter;
-import javax.persistence.Convert;
 import javax.persistence.Converter;
 
-@Converter(autoApply = false)
+@Converter(autoApply = true)
 public class FormatoAttributeConverter implements AttributeConverter<FormatoEnum, Character> {
 
     @Override
     public Character convertToDatabaseColumn(FormatoEnum formatoEnum) {
-        return null;
+        return formatoEnum.getCodigo();
     }
 
     @Override
-    public FormatoEnum convertToEntityAttribute(Character character) {
-        return null;
+    public FormatoEnum convertToEntityAttribute(Character codigo) {
+        return FormatoEnum.findByCodigo(codigo);
     }
 }

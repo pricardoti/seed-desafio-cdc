@@ -24,7 +24,7 @@ public enum FormatoEnum {
         return descricao;
     }
 
-    public final FormatoEnum findByCodigo(Character codigo) {
+    public static FormatoEnum findByCodigo(Character codigo) {
         Optional.ofNullable(codigo).orElseThrow(IllegalArgumentException::new);
         return Stream.of(values()).parallel()
                 .filter(item -> item.codigo.equals(codigo))
