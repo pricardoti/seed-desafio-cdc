@@ -1,22 +1,27 @@
 package br.com.pricardoti.casacodigo.autor;
 
+import br.com.pricardoti.casacodigo.commons.validation.BasicField;
 import br.com.pricardoti.casacodigo.commons.validation.email.EmailUnico;
 
+import javax.validation.GroupSequence;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import javax.validation.groups.Default;
 
+@GroupSequence({BasicField.class, SalvarAutorRequest.class})
 public class SalvarAutorRequest {
 
-    @NotBlank(message = "{notblank.autor.nome}")
+    @NotBlank(groups = BasicField.class, message = "{notblank.autor.nome}")
     private String nome;
 
-    @EmailUnico
-    @NotBlank(message = "{notblank.autor.email}")
+    @NotEmpty(groups = BasicField.class, message = "{notblank.autor.email}")
+    @EmailUnico(groups = Default.class)
     private String email;
 
     @Size(max = 400, message = "{size.autor.descricao}")
-    @NotBlank(message = "{size.autor.descricao}")
+    @NotBlank(groups = BasicField.class, message = "{size.autor.descricao}")
     private String descricao;
 
     public SalvarAutorRequest() {
@@ -24,7 +29,7 @@ public class SalvarAutorRequest {
 
     public SalvarAutorRequest(
             @NotBlank String nome,
-            @Email @NotBlank String email,
+            @EmailUnico @NotBlank String email,
             @Size(max = 400) @NotBlank String descricao
     ) {
         this.nome = nome;
@@ -44,16 +49,7 @@ public class SalvarAutorRequest {
         return descricao;
     }
 
-    @Override
-    public String toString() {
-        return "SalvarAutorRequest{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", descricao='" + descricao + '\'' +
-                '}';
-    }
-
-    protected Autor getAutor() {
+    protected Autor convertToAutor() {
         return new Autor(this.nome, this.email, this.descricao);
     }
 }

@@ -19,7 +19,7 @@ public class AutorController {
 
     @PostMapping
     public ResponseEntity<SalvarAutorResponse> salvar(@RequestBody @Valid final SalvarAutorRequest autorRequest) {
-        final Autor autor = autorRepository.save(autorRequest.getAutor());
+        final Autor autor = autorRepository.save(autorRequest.convertToAutor());
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new SalvarAutorResponse(autor));
     }
