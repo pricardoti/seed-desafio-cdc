@@ -1,4 +1,4 @@
-package br.com.pricardoti.casacodigo.autor.validation.email;
+package br.com.pricardoti.casacodigo.commons.validation.email;
 
 import br.com.pricardoti.casacodigo.autor.AutorRepository;
 

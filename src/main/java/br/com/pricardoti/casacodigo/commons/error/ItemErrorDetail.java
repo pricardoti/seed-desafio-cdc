@@ -1,4 +1,4 @@
-package br.com.pricardoti.casacodigo.core.error;
+package br.com.pricardoti.casacodigo.commons.error;
 
 public class ItemErrorDetail {
     private final String key;

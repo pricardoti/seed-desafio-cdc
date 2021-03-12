@@ -1,6 +1,6 @@
 package br.com.pricardoti.casacodigo.autor;
 
-import br.com.pricardoti.casacodigo.autor.validation.email.EmailUnico;
+import br.com.pricardoti.casacodigo.commons.validation.email.EmailUnico;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

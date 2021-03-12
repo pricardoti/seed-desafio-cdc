@@ -1,4 +1,4 @@
-package br.com.pricardoti.casacodigo.core;
+package br.com.pricardoti.casacodigo.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CasaCodigoApplication {
+public class CasaCodigoStartApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CasaCodigoApplication.class, args);
+        SpringApplication.run(CasaCodigoStartApplication.class, args);
     }
 }

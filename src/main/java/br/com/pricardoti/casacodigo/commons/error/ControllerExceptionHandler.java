@@ -1,7 +1,5 @@
-package br.com.pricardoti.casacodigo.core.error.handler;
+package br.com.pricardoti.casacodigo.commons.error;
 
-import br.com.pricardoti.casacodigo.core.error.ErrorDetail;
-import br.com.pricardoti.casacodigo.core.error.ItemErrorDetail;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -30,8 +28,8 @@ public class ControllerExceptionHandler {
 
         return ResponseEntity.badRequest()
                 .body(new ErrorDetail
-                        .Builder(HttpStatus.BAD_REQUEST.value(), "Method Argument Not Valid Exception")
-                        .description("Field Validation Error")
+                        .Builder(HttpStatus.BAD_REQUEST.value(), "Argumento do método não é valido.")
+                        .description("Erro na validação de campo(s).")
                         .errors(errors)
                         .timestamp(LocalDateTime.now())
                         .build());

@@ -1,4 +1,4 @@
-package br.com.pricardoti.casacodigo.core.error;
+package br.com.pricardoti.casacodigo.commons.error;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

@@ -52,9 +52,11 @@ public class AutorControllerTest {
     @Nested
     @DisplayName("Consultar Autor")
     class ConsultarAutor {
+
         @Test
         @DisplayName("Sucesso")
-        public void consultarAutor_sucesso() {
+        public void consultarAutor_sucesso() throws Exception {
+            throw new Exception("not implement");
         }
     }
 
